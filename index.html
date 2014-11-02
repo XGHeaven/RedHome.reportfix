@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="baoxiu.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/template.js" type="text/javascript"></script>
+    <script src="reportfix.js" type="text/javascript"></script>
+    <script type="text/html" id="t_list">
+        {{each list}}
+        <div class="boxcontent" id="l{{$value.id}}">
+            <div class="l_state">
+                <span class="{{$value.status}}">{{getStatus($value.status)}}</span>
+        </div>
+            <div class="l_title">
+                {{$value.title}}
+            </div>
+            <div class="l_name">
+                {{$value.req.requester}}
+            </div>
+            <div class="l_time">
+                {{$value.req.time}}
+            </div>
+        </div>
+        {{/each}}
+    </script>
+    <script type="text/html" id="t_detail">
+            <div class="fifth">
+                <span id="n_back" onclick="showList(false)"></span>
+                <div id="n_situation" class="{{info.status}}">{{getStatus(info.status)}}</div>
+                <div id="n_top">{{info.title}}</div>
+                <div id="n_two">{{info.req.requester}}</div>
+                <div class="n_three">申报时间:{{info.req.time}}</div>
+            </div>
+            <div class="boxcontent" >
+                <div class="a2">内容:{{info.req.content}}</div>
+                <div class="a3">
+                    申报分型：{{info.req.sorts}}<br/>
+                    申报类型：{{info.req.type}}<br/>
+                    申报区域：{{info.req.location}}<br/>
+                    地址：{{info.req.where}}<br/>
+                    联系电话：{{info.req.tel}}
+                </div>
+                <HR style="margin: 40px 0px" color=#e5e5e5 SIZE=3 />
+                <div class="a5">
+                    受理人：<span class="a4">{{info.res.receiver}}</span><br/>
+                    受理时间：<span class="a4">{{info.res.rec_time}}</span><br/>
+                    <br/>
+                    派出人：<span class="a4">{{info.res.dealer}}</span><br/>
+                    派出时间：<span class="a4">{{info.res.deal_time}}</span><br/>
+                </div>
+            </div>
+    </script>
+    <script type="text/html" id="t_apply">
+        <div id="apply" class="boxcontent">
+                <form method="post">
+                <span>申报人：</span>
+        <span id="a_name">123</span><br>
+        <span>联系电话：</span> <input id="a_tel" name="tel" type="text"><br>
+                <span>申报分类：</span>
+        <select id="a_sorts" class="txt">
+                <option value="==请选择==">请选择</option>
+        　　<option value=" 选择 "> 选择 </option>
+        <option value=" 选择 "> 选择 </option>
+        <option value=" 选择 "> 选择 </option>
+        <option value=" 选择 "> 选择 </option>
+        </select> <br>
+        <span>申报区域：</span>
+        <select id="a_location" class="txt">
+                <option value="==请选择==">请选择</option>
+        　　<option value=" 选择 "> 选择 </option>
+        <option value=" 选择 "> 选择 </option>
+        <option value=" 选择 "> 选择 </option>
+        <option value=" 选择 "> 选择 </option>
+        </select> <br>
+        <span>申报类型：</span>
+        <select id="a_type" class="txt">
+                <option value="==请选择==">请选择</option>
+        　　<option value=" 选择 "> 选择 </option>
+        <option value=" 选择 "> 选择 </option>
+        <option value=" 选择 "> 选择 </option>
+        <option value=" 选择 "> 选择 </option>
+        </select> <br>
+        <span>标题：</span> <input id="a_title" name="title" type="text"><br>
+                <span>地址：</span> <input id="a_where" name="where" type="text"><br>
+                <span>内容：</span><br>
+        <textarea id="a_content" name="content"></textarea><br>
+        <input id="a_openid" name="openID" type="hidden" value="openID">
+                <div style="width: 100%;"><input type="button" value="submit" onclick="checkForm(this.parentNode,this)" class="button"></div>
+                </form>
+        </div>
+    </script>
+</head>
+
+<body>
+    <div id="body">
+        <div id="header">
+            HDU report
+        </div>
+        <div id="nav">
+            <div id="fixlist" class="fixnav">报修列表</div>
+            <div id="fixapply" class="fixnav">报修申请</div>
+            <div id="bottoml"></div>
+            <div id="bottomr"></div>
+        </div>
+        <div class="bigcontent">
+            <div id="listcon" class="content"></div>
+            <div id="detailcon" class="content"></div>
+            <div id="applycon" class="content"></div>
+        </div>
+    </div>
+</body>
+</html>

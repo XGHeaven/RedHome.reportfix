@@ -1,0 +1,168 @@
+body,html{
+    margin:0px;
+    padding:0px;
+    background:#e5e5e5;
+    font-family:微软雅黑;
+}
+
+#body{
+    width:100%;
+    margin:0px auto;
+}
+
+#header{
+    width:100%;
+    height:90px;
+    background:#22272a;
+    color:#fff;
+}
+
+#nav{
+    width:100%;
+    background:#fff;
+    height:70px;
+    position: relative;
+}
+
+#nav .fixnav{
+    display:block;
+    float:left;
+    height:100%;
+    width:50%;
+    text-align: center;
+    line-height: 60px;
+    font-size: 26px;
+}
+
+#nav #bottoml{
+    width:50%;
+    height: 8px;
+    background: #18b3eb;
+    position: absolute;
+    bottom: 0px;
+    left:0px;
+    visibility: visible;
+}
+
+#nav #bottomr{
+    width:50%;
+    height: 8px;
+    background: #18b3eb;
+    position: absolute;
+    bottom: 0px;
+    right:0px;
+    visibility: hidden;
+}
+
+div .bigcontent{
+    position:relative;
+    margin: 0px;
+}
+
+.content{
+    margin:0px;
+    position: absolute;
+    width:100%;
+}
+
+#listcon{
+    z-index: 10;
+    display: none;
+}
+
+#detailcon{
+    z-index: 9;
+    display: none;
+}
+
+#applycon{
+    z-index: 8;
+    display: none;
+}
+
+.boxcontent{
+    margin:10px;
+    padding:20px;
+    background:#fff;
+    box-shadow: 2px 2px 2px #ababab;
+}
+
+#list{
+    margin:10px;
+    padding:20px;
+    background:#fff;
+    box-shadow: 2px 2px 2px #ababab;
+}
+
+#listcon .l_state{
+    float: right;
+    font-size: 26.2px;
+}
+
+.ok{
+    color:#18b3eb;
+}
+.denied{
+    color:#919191;
+}
+.unok{
+    color:#ff8634;
+}
+.running{
+    color:#18b3eb;
+}
+
+#listcon .l_title{
+    color:#666;
+    font-size: 28.5px;
+}
+
+#listcon .l_name{
+    font-size: 24px;
+    color: #18b3eb;
+}
+
+#listcon .l_time{
+    font-size:26px;
+    color:#919191;
+}
+
+#apply{
+    margin:10px;
+    padding:20px;
+    background:#fff;
+    box-shadow: 2px 2px 2px #ababab;
+    font-size: 26px;
+}
+
+#apply span{
+    color:#18b3eb;
+}
+
+#apply textarea{
+    width:100%;
+    height:200px;
+    font-size: 26px;
+    color: #919191;
+}
+
+#apply input,#apply select{
+    font-size:26px;
+    color: #919191;
+    width: 70%;
+    margin:10px 0px;
+}
+
+#apply #a_name{
+    color:#919191;
+}
+
+#apply .button{
+    border:none;
+    border-radius: 10px;
+    color:white;
+    background: #18b3eb;
+    width:150px;
+    margin: 20px auto;
+    display: block;
+}
